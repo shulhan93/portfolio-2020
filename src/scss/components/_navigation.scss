@@ -1,0 +1,26 @@
+.main-nav {}
+
+.main-nav__list {
+    display: flex;
+}
+
+.main-nav__item {
+    margin-right: 25px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+
+}
+
+.main-nav__link {
+    color: $text-color;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $current-color;
+    }
+}

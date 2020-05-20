@@ -14,8 +14,13 @@
 @import 'base/variables';
 @import 'base/_mixins';
 @import 'base/normalize';
+@import 'base/container';
 @import 'base/fonts';
+@import 'base/global';
 
 //========== Components ==========
 @import 'components/header';
+@import 'components/logo';
+@import 'components/navigation';
+
 @import 'components/footer';
