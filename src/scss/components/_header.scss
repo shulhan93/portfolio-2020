@@ -3,7 +3,8 @@
     width: 100%;
     transition: all 0.4s;
     background-color: $bg-color;
-    height: 70px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    height: 80px;
 
     &__container {
         height: 100%;
@@ -11,7 +12,6 @@
 
     &__wrapper {
         height: 100%;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -22,7 +22,7 @@
     }
 
     &.sticky {
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-        padding: 3px 0;
+        padding: 0;
+        height: 55px;
     }
 }
