@@ -1,0 +1,135 @@
+$li-padding: 10px 0;
+
+$progressbar-title-color: #333333;
+$bg-skill: #6b778d;
+$animation-delay: .4s;
+
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.skills {
+    margin-top: 50px;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.skills-bar-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    min-width: 300px;
+    list-style: none;
+
+    li {
+        position: relative;
+        width: 100%;
+        padding: $li-padding;
+        margin-bottom: 5px;
+
+        .progressbar-title {
+            h3 {
+                display: inline-block;
+                color: #fff;
+                font-size: 20px;
+
+            }
+        }
+
+        .bar-container {
+            position: relative;
+            width: 100%;
+            height: 26px;
+            margin-top: 5px;
+            display: block;
+            @include border-radius(50px);
+            padding: 5px 10px;
+            background-color: #292929;
+
+            .progressbar {
+                position: absolute;
+                width: 0%;
+                height: 50%;
+                @include border-radius(50px);
+                top: 50%;
+                transform: translateY(-50%);
+
+                -webkit-animation-duration: 1.8s;
+                animation-duration: 1.8s;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            .progress-html {
+                -webkit-animation-name: progress-html;
+                animation-name: progress-html;
+                -webkit-animation-delay: $animation-delay;
+                animation-delay: $animation-delay;
+            }
+
+            .progress-css {
+                -webkit-animation-name: progress-css;
+                animation-name: progress-css;
+                -webkit-animation-delay: $animation-delay*2;
+                animation-delay: $animation-delay*2;
+            }
+
+            .progress-javascript {
+                -webkit-animation-name: progress-javascript;
+                animation-name: progress-javascript;
+                -webkit-animation-delay: $animation-delay*3;
+                animation-delay: $animation-delay*3;
+            }
+
+        }
+    }
+}
+
+.progress {
+    background: linear-gradient(300deg, rgba(252, 75, 64, 0.69) -8.98%, #2A383D 134.69%);
+}
+
+
+
+@keyframes progress-html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes progress-css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes progress-javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
