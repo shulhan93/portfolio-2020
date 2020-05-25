@@ -1,5 +1,7 @@
 .header {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
 
     &__wrapper {
         display: flex;

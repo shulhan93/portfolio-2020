@@ -1,0 +1,38 @@
+.promo {
+    height: 100vh;
+    background: url('../img/promo-bg.svg') right 15% center no-repeat;
+
+    &__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__text {
+        max-width: 550px;
+    }
+
+    &__title {
+        color: #fff;
+        font-size: 45px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    &__title-orange {
+        color: $current-color;
+        font-weight: 700;
+    }
+
+    &__subtitle {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 400;
+        color: $text-color;
+        line-height: 22px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}
