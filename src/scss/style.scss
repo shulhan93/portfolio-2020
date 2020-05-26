@@ -17,7 +17,7 @@
 @import 'base/container';
 @import 'base/fonts';
 @import 'base/global';
-
+@import 'base/animated';
 //========== Components ==========
 @import 'components/header';
 @import 'components/logo';
@@ -27,6 +27,7 @@
 @import 'components/about';
 @import 'components/skills';
 @import 'components/services';
+
 
 
 @import 'components/footer';

@@ -30,5 +30,7 @@
     "gulp-webp-html": "^1.0.2",
     "gulp-webpcss": "^1.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "animate.css": "^4.1.0"
+  }
 }
