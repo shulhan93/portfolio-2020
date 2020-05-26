@@ -1,0 +1,40 @@
+.services {}
+
+.container {}
+
+.title {}
+
+.services__wrapper {}
+
+.services-item {
+    position: relative;
+    max-width: 480px;
+    padding: 30px 30px;
+    border-radius: 10px;
+    background-color: $services-color;
+    border-right: 11px solid $current-color;
+    box-shadow: 15px 10px 20px rgba(35, 35, 35, 0.6);
+}
+
+.services-item__title {
+    font-weight: 500;
+    font-size: 23px;
+}
+
+.services-item__description {
+    margin-top: 20px;
+    max-width: 260px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $text-color;
+}
+
+.services-item__number {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    font-weight: 700;
+    font-size: 96px;
+    color: rgba(104, 104, 104, 0.5);
+}
