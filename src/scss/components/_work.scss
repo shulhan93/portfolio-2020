@@ -1,0 +1,45 @@
+.work {
+    position: relative;
+    display: flex;
+    padding: 0 20px 0 50px;
+    overflow: hidden;
+    background-color: #404040;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_small {
+        max-width: 580px;
+        width: 100%;
+        flex-direction: row-reverse;
+    }
+
+    img {
+        width: 100%;
+        display: inline-block;
+        border-radius: 18px;
+        border: 8px solid #2B2B2B;
+    }
+
+    &__img {
+        max-width: 600px;
+        box-shadow: 10px 20px 8px rgba(0, 0, 0, 0.45);
+
+        transform: translateY(30px);
+    }
+
+    &__description {
+        padding-left: 5px;
+        align-self: center;
+        max-width: 250px;
+        font-weight: 500;
+        font-size: 22px;
+        color: $text-color;
+        border-left: 4px solid $current-color;
+
+    }
+}
