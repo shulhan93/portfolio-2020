@@ -4,83 +4,97 @@
     background-color: #383838;
     border-radius: 10px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
-}
 
-.slider__item {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    padding-right: 150px;
-}
-
-/* .slider__text {
-
-    position: absolute;
-    left: 20px;
-    bottom: 25px;
-    color: $text-color;
-    font-weight: 500;
-} */
-
-.slider__img {
-    max-width: 550px;
-    position: relative;
-    transition: all 0.3s;
-
-    &::before {
-        position: absolute;
-        bottom: 12px;
-        content: 'перейти';
-        background-color: rgba(51, 51, 51, 0.863);
-        width: 100%;
-        height: 0;
-        z-index: 200;
-        transition: all 0.4s;
-        color: $current-color;
-        font-weight: 700;
-        text-transform: uppercase;
-        padding-left: 20px;
-
-        opacity: 0;
-        border-radius: 5px;
-        /*  transform: scale(0); */
+    &__item {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+        padding-right: 150px;
     }
 
-    &:hover {
-
-        transform: scale(0.98);
+    &__img {
+        max-width: 550px;
+        position: relative;
+        transition: all 0.3s;
 
         &::before {
-            height: 15%;
-            opacity: 1;
-            padding: 20px;
-            /* transform: scale(1); */
+            position: absolute;
+            bottom: 12px;
+            content: "перейти";
+            background-color: rgba(51, 51, 51, 0.863);
+            width: 100%;
+            height: 0;
+            z-index: 200;
+            transition: all 0.4s;
+            color: $current-color;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-left: 20px;
 
+            opacity: 0;
+            border-radius: 5px;
+            /*  transform: scale(0); */
+        }
 
+        &:hover {
+            transform: scale(0.98);
 
+            &::before {
+                height: 15%;
+                opacity: 1;
+                padding: 20px;
+                /* transform: scale(1); */
+            }
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+            border-radius: 15px;
+            border: 9px solid #2e2e2e;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.54);
         }
     }
 
-    img {
-        position: relative;
-        width: 100%;
-        border-radius: 15px;
-        border: 9px solid #2e2e2e;
+    &__count {
+        position: absolute;
+        top: 50%;
+        right: 100px;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 60px;
+        display: block;
+        background-color: rgb(68, 68, 68);
+        z-index: 100;
+        border-radius: 5px;
+        line-height: 60px;
+        font-weight: 500;
+        text-align: center;
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.54);
+    }
+
+    &__description {
+        margin-right: 30px;
+        margin-bottom: 50px;
+        max-width: 270px;
+        padding-left: 7px;
+        align-self: flex-end;
+        border-left: 4px solid $current-color;
+        font-weight: 400;
+        font-size: 22px;
+        color: $text-color;
     }
 }
 
-.slider__description {
-    margin-right: 30px;
-    margin-bottom: 50px;
-    max-width: 270px;
-    padding-left: 7px;
-    align-self: flex-end;
-    border-left: 4px solid $current-color;
-    font-weight: 400;
-    font-size: 22px;
-    color: $text-color;
-}
+/* .slider-small {
+    width: 100%;
+    &__item {
+        max-width: 300px;
+        img {
+            width: 100%;
+        }
+    }
+} */
 
 /* Слайдер */
 .slick-slider {}
@@ -140,14 +154,13 @@
 /* Стрелка влево */
 .slider .slick-arrow.slick-prev {
     left: 30px;
-    background: url('../img/arrow-p.svg') no-repeat;
+    background: url("../img/arrow-p.svg") no-repeat;
 }
 
 /* Стрелка вправо */
 .slider .slick-arrow.slick-next {
     right: 30px;
-    background: url('../img/arrow-n.svg') no-repeat;
-
+    background: url("../img/arrow-n.svg") no-repeat;
 }
 
 /* Стрелка не активная */

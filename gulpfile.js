@@ -94,7 +94,13 @@ function css() {
         .pipe(browsersync.stream());
 }
 
+function jsCopy() {
+    return src(path.watch.js)
+        .pipe(dest(path.build.js))
+}
+
 function js() {
+    jsCopy()
     return src(path.src.js)
         .pipe(fileinclude())
         .pipe(
