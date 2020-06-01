@@ -1,0 +1,10 @@
+.footer {
+    padding: 20px;
+    text-align: center;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.11);
+
+    &__text {
+        font-weight: 600;
+        color: $text-color;
+    }
+}

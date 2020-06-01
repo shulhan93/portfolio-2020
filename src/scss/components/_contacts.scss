@@ -1,0 +1,54 @@
+.contacts {
+    background: url('../img/form-bg.svg') 20% 130% no-repeat;
+    padding-top: 120px;
+    padding-bottom: 150px;
+
+    &__wrapper {
+        margin-top: 80px;
+        display: flex;
+    }
+
+    &__block-link {
+        margin-top: 80px;
+        margin-left: 100px;
+    }
+
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+
+    &_mail {
+        background: url('../img/email-link.svg') left top no-repeat;
+    }
+
+    &_tel {
+        background: url('../img/telegram-link.svg') left top no-repeat;
+    }
+
+    &_vk {
+        background: url('../img/vk-link.svg') left top no-repeat;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 27px;
+    }
+
+
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: $text-color;
+    }
+
+    &__url {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: $current-color;
+    }
+}
