@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="css/style.min.css" />
         <title>shulhan</title>
     </head>
-
     <body>
         <header class="header">
             <div class="container header__container">
@@ -36,9 +35,10 @@
                 </div>
             </div>
         </header>
+
         <section class="promo">
             <div class="container promo__container">
-                <div class="promo__text">
+                <div class="promo__text animate__animated animate__zoomInLeft">
                     <div class="promo__title">
                         Привет, я андрей HTML
                         <span class="promo__title-orange">верстальщик</span>
@@ -48,19 +48,27 @@
                         на CMS <span>Wordpress</span>
                     </div>
                 </div>
+                <div class="promo__img animate__animated animate__zoomIn">
+                    <img src="img/promo-bg.svg" alt="" />
+                </div>
             </div>
         </section>
+
         <section class="about">
             <div class="container about__container">
                 <h2 class="title">
                     Обо мне
                 </h2>
                 <div class="about__wrapper">
-                    <div class="about__photo">
+                    <div
+                        class="about__photo wow animate__animated animate__jackInTheBox"
+                    >
                         <img src="img/about-photo.png" alt="photo" />
                     </div>
 
-                    <div class="about__block-text">
+                    <div
+                        class="about__block-text wow animate__animated animate__fadeIn"
+                    >
                         <span class="about__name">Я Шульган Андрей</span>
                         <p class="about__description">
                             Приветствую на своем сайте портфолио. Сверстаю для
@@ -109,7 +117,7 @@
                 </div>
                 <div class="skills">
                     <ul class="skills-bar-container">
-                        <li class="wow fadeInDown">
+                        <li class="wow animate__animated animate__fadeInUp">
                             <div class="progressbar-title">
                                 <h3>HTML</h3>
                                 <span class="percent" id="html-pourcent"></span>
@@ -120,7 +128,7 @@
                                 ></span>
                             </div>
                         </li>
-                        <li class="wow fadeInDown">
+                        <li class="wow animate__animated animate__fadeInUp">
                             <div class="progressbar-title">
                                 <h3>CSS</h3>
                             </div>
@@ -131,7 +139,7 @@
                             </div>
                         </li>
 
-                        <li class="wow fadeInDown">
+                        <li class="wow animate__animated animate__fadeInUp">
                             <div class="progressbar-title">
                                 <h3>JavaScript</h3>
                                 <span
@@ -149,11 +157,14 @@
                 </div>
             </div>
         </section>
+
         <section class="services">
             <div class="container">
                 <h2 class="title">Услуги</h2>
                 <div class="services__wrapper">
-                    <div class="services-item">
+                    <div
+                        class="services-item wow animate__animated animate__fadeInUp data-wow-delay='1s'"
+                    >
                         <h3 class="services-item__title">Адаптивная верстка</h3>
                         <p class="services-item__description">
                             Создание адаптивной верстки под различные
@@ -162,7 +173,9 @@
                         <span class="services-item__number">01</span>
                     </div>
 
-                    <div class="services-item">
+                    <div
+                        class="services-item wow animate__animated animate__fadeInUp"
+                    >
                         <h3 class="services-item__title">Wordpress</h3>
                         <p class="services-item__description">
                             Установка сайта, на самую популярной систему
@@ -171,7 +184,9 @@
                         <span class="services-item__number">02</span>
                     </div>
 
-                    <div class="services-item">
+                    <div
+                        class="services-item wow animate__animated animate__fadeInUp"
+                    >
                         <h3 class="services-item__title">Оптимизация сайта</h3>
                         <p class="services-item__description">
                             Комлпекс работ, по обеспечению максимальной загрузки
@@ -180,7 +195,9 @@
                         <span class="services-item__number">03</span>
                     </div>
 
-                    <div class="services-item">
+                    <div
+                        class="services-item wow animate__animated animate__fadeInUp"
+                    >
                         <h3 class="services-item__title">Яндекс.Метрика</h3>
                         <p class="services-item__description">
                             Подкючение сайта к системе аналитики.
@@ -217,7 +234,9 @@
                 </div>
 
             </div> -->
-                <div class="portfolio__slider">
+                <div
+                    class="portfolio__slider wow animate__animated animate__fadeIn"
+                >
                     <div class="slider">
                         <div class="slider__item">
                             <p class="slider__description">
@@ -254,11 +273,14 @@
                 </div>
             </div>
         </section>
+
         <section class="contacts">
             <div class="container contacts__container">
                 <h2 class="title">Контакты</h2>
                 <div class="contacts__wrapper">
-                    <div class="contacts__block-link">
+                    <div
+                        class="contacts__block-link wow animate__animated animate__fadeInLeft"
+                    >
                         <a href="#" class="social-link social-link_mail">
                             <span class="social-link__title">E-mail</span>
                             <span class="social-link__url"
@@ -276,7 +298,7 @@
                             <span class="social-link__url">id6763453645</span>
                         </a>
                     </div>
-                    <form class="form">
+                    <form class="form wow animate__animated animate__fadeInUp">
                         <h3 class="form__title">
                             Написать мне
                         </h3>
@@ -293,6 +315,7 @@
                 </div>
             </div>
         </section>
+
         <footer class="footer">
             <div class="container">
                 <p class="footer__text">
@@ -302,6 +325,7 @@
         </footer>
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/slick.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/script.min.js"></script>
     </body>
 </html>

@@ -12,3 +12,18 @@ ul {
 a {
     text-decoration: none;
 }
+
+.promo__text.animate__animated.animate__bounceInLeft {
+    --animate-duration: 1s;
+    --animate-delay: 0.9s;
+}
+
+.promo__img.animate__animated.animate__fadeIn {
+    --animate-duration: 2s;
+
+}
+
+.about__block-text.animate__fadeIn {
+    --animate-duration: 1s;
+
+}

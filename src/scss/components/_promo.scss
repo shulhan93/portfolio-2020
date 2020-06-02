@@ -1,6 +1,11 @@
 .promo {
     height: 100vh;
-    background: url('../img/promo-bg.svg') right 15% center no-repeat;
+
+    &__img {
+        margin-right: -150px;
+    }
+
+    /*    background: url('../img/promo-bg.svg') right 15% center no-repeat; */
 
     &__container {
         height: 100%;

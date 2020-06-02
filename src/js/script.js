@@ -43,7 +43,10 @@ $(document).ready(function () {
             return
         }
         currentSlider.textContent = +currentSlider.textContent - 1
-    })
+    });
+    new WOW({
+        offset: 20
+    }).init();
 
 
 });
