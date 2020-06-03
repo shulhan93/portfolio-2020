@@ -1,8 +1,29 @@
 .promo {
+    overflow: hidden;
+    padding-top: 90px;
     height: 100vh;
 
+    @include media-laptop {
+        height: auto;
+        padding-top: 120px;
+    }
+
     &__img {
-        margin-right: -150px;
+
+        margin-right: -100px;
+
+        @include media-mobile-big {
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+
+            /*   @include media-laptop {
+                width: 90%;
+            } */
+        }
     }
 
     /*    background: url('../img/promo-bg.svg') right 15% center no-repeat; */
@@ -11,6 +32,10 @@
         height: 100%;
         display: flex;
         align-items: center;
+
+        @include media-mobile-big {
+            display: block;
+        }
     }
 
     &__text {
@@ -22,6 +47,20 @@
         font-size: 45px;
         font-weight: 400;
         text-transform: uppercase;
+
+        @include media-desktop {
+            font-size: 40px;
+        }
+
+        @include media-laptop {
+            font-size: 32px;
+        }
+
+        @include media-tablet {
+            font-size: 28px;
+        }
+
+
     }
 
     &__title-orange {
@@ -35,6 +74,17 @@
         font-weight: 400;
         color: $text-color;
         line-height: 22px;
+
+        @include media-laptop {
+            margin-top: 12px;
+            font-size: 16px;
+        }
+
+        @include media-tablet {
+            font-size: 15px
+        }
+
+
 
         span {
             font-weight: 700;

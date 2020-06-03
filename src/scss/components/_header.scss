@@ -1,11 +1,19 @@
 .header {
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     transition: all 0.4s;
     background-color: $bg-color;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     height: 80px;
     z-index: 100;
+
+    @include media-tablet {
+        height: 50px;
+    }
+
+
 
     &__container {
         height: 100%;
@@ -16,10 +24,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    &__main-nav {
-        margin-right: 100px;
     }
 
     &.sticky {

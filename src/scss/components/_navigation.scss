@@ -1,26 +1,125 @@
-.main-nav {}
+.main-nav {
+    transition: all 0.3s;
 
-.main-nav__list {
-    display: flex;
-}
+    @include media-tablet {
+        position: fixed;
+        top: 50px;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: $services-color;
+        padding: 50px;
+        transform: scale(0);
+    }
 
-.main-nav__item {
-    margin-right: 25px;
-
-    &:last-child {
-        margin-right: 0;
+    &.active {
+        transform: scale(1);
+        left: 0;
     }
 
 
-}
+    &__list {
+        display: flex;
 
-.main-nav__link {
-    color: $text-color;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+        @include media-tablet {
+            display: block;
+            margin: auto;
+        }
+    }
 
-    &:hover {
-        color: $current-color;
+    &__item {
+        margin-left: 25px;
+
+        @include media-laptop {
+            margin-left: 20px;
+        }
+
+        @include media-tablet {
+            text-align: center;
+            margin-bottom: 35px;
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        color: $text-color;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $current-color;
+        }
+
+        @include media-laptop {
+            font-size: 15px;
+        }
+
+        @include media-tablet {
+            font-size: 30px;
+        }
+
+        @include media-mobile-big {
+            font-size: 25px;
+        }
+    }
+
+    &__burger {
+        cursor: pointer;
+        display: none;
+        position: relative;
+        width: 30px;
+        height: 20px;
+
+        &::before,
+        &:after {
+            content: "";
+            background-color: #fff;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: all 0.3s;
+
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        &.active::before {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+
+        &.active::after {
+            transform: rotate(-45deg);
+            bottom: 9px;
+
+        }
+
+        &.active span {
+            transform: scale(0);
+
+        }
+
+        span {
+            position: absolute;
+            background-color: #fff;
+            height: 2px;
+            left: 0;
+            top: 9px;
+            width: 100%;
+            transition: all 0.3s;
+
+        }
+
+        @include media-tablet {
+            display: block;
+        }
     }
 }

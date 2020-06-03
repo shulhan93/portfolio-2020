@@ -11,7 +11,7 @@
 }
 
 @mixin media-tablet {
-    @media (max-width: $w-laptop) {
+    @media (max-width: $w-tablet) {
         @content;
     }
 }

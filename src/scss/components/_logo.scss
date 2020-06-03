@@ -1,6 +1,14 @@
-    .logo a {
-        font-size: 30px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $current-color;
+    .logo {
+        margin: 0;
+
+        a {
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $current-color;
+
+            @include media-tablet {
+                font-size: 25px;
+            }
+        }
     }
