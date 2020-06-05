@@ -24,7 +24,18 @@ $(document).ready(function () {
     $('.main-nav__burger').click(function (e) {
         $('.main-nav, .main-nav__burger').toggleClass('active')
     })
-    $('.slider').slick({});
+    $('.slider').slick({
+        responsive: [{
+                breakpoint: 576,
+                settings: {
+                    dots: true,
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
     /*     const arrowP = document.querySelector('.slick-arrow.slick-prev')
         const arrowN = document.querySelector('.slick-next')
         const lengthSlider = document.querySelectorAll('.slick-cloned').length - 1

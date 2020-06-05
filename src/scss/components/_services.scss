@@ -1,20 +1,24 @@
 .services {
     padding: 80px 0;
-
 }
 
 .container {}
 
-.title {}
 
 .services__wrapper {
     margin-top: 100px;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
+
+    @include media-mobile-sm {
+        margin-top: 60px;
+        padding: 0;
+    }
 }
 
 .services-item {
+    margin-bottom: 30px;
     position: relative;
     max-width: 480px;
     min-height: 200px;
@@ -33,11 +37,21 @@
     &:hover {
         transform: translateY(-5px);
     }
+
+    @include media-mobile-sm {
+        min-height: auto;
+        padding: 25px 15px;
+        max-width: 400px;
+    }
 }
 
 .services-item__title {
     font-weight: 500;
     font-size: 23px;
+
+    @include media-mobile-sm {
+        font-size: 20px;
+    }
 }
 
 .services-item__description {
@@ -47,6 +61,11 @@
     line-height: 23px;
     font-weight: 400;
     color: $text-color;
+
+    @include media-mobile-sm {
+        margin-top: 10px;
+        font-size: 16px;
+    }
 }
 
 .services-item__number {
@@ -56,4 +75,9 @@
     font-weight: 700;
     font-size: 96px;
     color: rgba(104, 104, 104, 0.5);
+
+    @include media-mobile-sm {
+        font-size: 50px;
+        right: 3px;
+    }
 }

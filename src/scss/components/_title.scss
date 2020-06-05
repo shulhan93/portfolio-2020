@@ -15,4 +15,13 @@
         background-color: $current-color;
         border-radius: 7px;
     }
+
+    @include media-desktop {
+        font-size: 32px;
+    }
+
+    @include media-mobile {
+        font-size: 28px;
+    }
+
 }

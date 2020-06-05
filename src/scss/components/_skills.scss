@@ -14,6 +14,10 @@ $animation-delay: .4s;
 
 .skills {
     margin-top: 50px;
+
+    @include media-mobile {
+        margin-top: 25px;
+    }
 }
 
 *,
@@ -32,17 +36,31 @@ $animation-delay: .4s;
     min-width: 300px;
     list-style: none;
 
+    @include media-mobile-sm {
+        width: 100%;
+    }
+
     li {
         position: relative;
         width: 100%;
         padding: $li-padding;
         margin-bottom: 5px;
 
+        @include media-mobile {
+            padding: 5px 0;
+        }
+
         .progressbar-title {
             h3 {
                 display: inline-block;
                 color: #fff;
                 font-size: 20px;
+
+                @include media-mobile {
+                    font-size: 15px;
+                }
+
+
             }
         }
 
@@ -56,6 +74,11 @@ $animation-delay: .4s;
             padding: 5px 10px;
             background-color: #292929;
 
+            @include media-mobile {
+                height: 18px;
+                padding: 5px 6px;
+            }
+
             .progressbar {
                 position: absolute;
                 width: 0%;
@@ -63,8 +86,8 @@ $animation-delay: .4s;
                 @include border-radius(50px);
                 top: 50%;
                 transform: translateY(-50%);
-                -webkit-animation-duration: 1.8s;
-                animation-duration: 1.8s;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
                 -webkit-animation-timing-function: ease-out;
                 animation-timing-function: ease-out;
                 -webkit-animation-fill-mode: both;

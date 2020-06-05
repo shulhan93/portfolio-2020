@@ -1,4 +1,5 @@
 .about {
+    padding-top: 100px;
     padding-bottom: 100px;
 
     &__wrapper {
@@ -6,13 +7,25 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include media-mobile-sm {
+            display: block;
+        }
+
     }
 
     &__photo {
+
         position: relative;
         z-index: 10;
 
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+
         &::before {
+            max-width: 100%;
             content: '';
             display: block;
             position: absolute;
@@ -24,16 +37,57 @@
             border-radius: 50%;
             z-index: -1;
             opacity: 0.8;
+
+            @include media-tablet {
+                display: none;
+            }
+        }
+
+        @include media-tablet {
+            margin-bottom: 30px;
+        }
+
+        @include media-mobile {
+            margin-bottom: 90px;
+        }
+
+
+        @include media-mobile-sm {
+            width: 40%;
+            margin: auto;
         }
     }
 
     &__block-text {
         max-width: 720px;
+        margin-left: 30px;
+
+        /*    @include media-desktop {
+            max-width: 651px;
+        } */
+
+
+        @include media-mobile-sm {
+            margin-left: 0;
+        }
     }
 
     &__name {
         font-weight: bold;
         font-size: 40px;
+
+        @include media-tablet {
+            font-size: 32px;
+        }
+
+        @include media-mobile {
+            font-size: 25px;
+        }
+
+        @include media-mobile-sm {
+            font-size: 21px;
+            display: none;
+        }
     }
 
     &__description {
@@ -44,6 +98,15 @@
         color: $text-color;
         border-bottom: 1px solid #545454;
         padding-bottom: 20px;
+
+        @include media-tablet {
+            font-size: 19px;
+        }
+
+        @include media-mobile {
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
 
     &__block-social {
@@ -53,15 +116,32 @@
     }
 
     &__social-item {
+        min-width: 160px;
         font-size: 16px;
         width: 50%;
         margin-bottom: 20px;
+
+        &:nth-child(odd) {
+            @include media-tablet {
+                margin-right: 30px;
+            }
+        }
+
+        @include media-tablet {
+            margin-bottom: 10px;
+            width: auto;
+        }
     }
 
     &__social-item-title {
         font-weight: 700;
         display: inline-block;
         width: 100px;
+
+        @include media-mobile-sm {
+            font-size: 14px;
+            width: 80px;
+        }
     }
 
     &__social-item-link {
@@ -73,6 +153,13 @@
         &:hover:not(span) {
             color: $current-color;
         }
+
+        @include media-mobile-sm {
+            font-size: 14px;
+
+        }
+
+
     }
 
 

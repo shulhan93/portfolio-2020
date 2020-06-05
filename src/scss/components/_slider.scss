@@ -4,55 +4,85 @@
     background-color: #383838;
     border-radius: 10px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+
+
+    @include media-mobile-sm {}
 
     &__item {
         display: flex;
         justify-content: flex-end;
         padding: 20px;
         padding-right: 150px;
+
+        @include media-tablet {
+            padding-right: 100px;
+        }
+
+        @include media-mobile {
+            padding-right: 60px;
+        }
+
+
+        @include media-mobile-sm {
+            padding: 10px;
+        }
+
+        &.slick-current .slider__img::before {
+            opacity: 1;
+            padding: 17px 15px 10px 15px;
+        }
     }
 
     &__img {
+        display: block;
         max-width: 550px;
         position: relative;
         transition: all 0.3s;
 
         &::before {
             position: absolute;
-            bottom: 12px;
+            bottom: 2px;
             content: "перейти";
             background-color: rgba(51, 51, 51, 0.863);
             width: 100%;
-            height: 0;
             z-index: 200;
             transition: all 0.4s;
+            transition-delay: 0.5s;
             color: $current-color;
             font-weight: 700;
             text-transform: uppercase;
             padding-left: 20px;
-
             opacity: 0;
-            border-radius: 5px;
-            /*  transform: scale(0); */
+            border-radius: 7px;
+
+
+            @include media-mobile-sm {
+                font-size: 12px;
+            }
         }
 
         &:hover {
             transform: scale(0.98);
-
-            &::before {
-                height: 15%;
-                opacity: 1;
-                padding: 20px;
-                /* transform: scale(1); */
-            }
         }
 
         img {
             position: relative;
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
             border-radius: 15px;
             border: 9px solid #2e2e2e;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.54);
+
+            @include media-mobile {
+                border-width: 4px;
+            }
+
+            @include media-mobile-sm {
+                box-shadow: 2px 3px 6px rgba(0, 0, 0, .54);
+            }
         }
     }
 
@@ -74,8 +104,8 @@
     }
 
     &__description {
-        margin-right: 30px;
-        margin-bottom: 50px;
+        margin-right: 10px;
+        margin-bottom: 20px;
         max-width: 270px;
         padding-left: 7px;
         align-self: flex-end;
@@ -83,6 +113,19 @@
         font-weight: 400;
         font-size: 22px;
         color: $text-color;
+
+        @include media-tablet {
+            font-size: 20px;
+        }
+
+
+        @include media-mobile {
+            font-size: 15px;
+        }
+
+        @include media-mobile-sm {
+            display: none;
+        }
     }
 }
 
@@ -108,7 +151,7 @@
     z-index: 10;
     font-size: 0;
     width: 40px;
-    height: 43px;
+    height: 95%;
     border: none;
     cursor: pointer;
     outline: none;
@@ -117,16 +160,60 @@
     &:hover {
         opacity: 0.5;
     }
+
+    @include media-mobile-sm {
+        width: 30px;
+    }
 }
 
 /* Стрелка влево */
 .slider .slick-arrow.slick-prev {
     left: 30px;
-    background: url("../img/arrow-p.svg") no-repeat;
+    background: url("../img/arrow-p.svg") no-repeat center center /contain;
+
+    @include media-mobile {
+        left: 7px;
+    }
+
+    @include media-mobile-sm {
+        left: 15px;
+    }
 }
 
 /* Стрелка вправо */
 .slider .slick-arrow.slick-next {
     right: 30px;
-    background: url("../img/arrow-n.svg") no-repeat;
+    background: url("../img/arrow-n.svg") no-repeat center center /contain;
+
+    @include media-mobile {
+        right: 7px;
+    }
+
+    @include media-mobile-sm {
+        right: 15px;
+    }
+}
+
+.slider .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+
+    li {
+        margin: 0 3px;
+        display: flex;
+    }
+
+    li.slick-active button {
+        background-color: $current-color;
+    }
+
+    button {
+        font-size: 0;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        border: none;
+        background-color: $text-color;
+    }
 }
