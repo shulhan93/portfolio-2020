@@ -3,8 +3,18 @@
     text-align: center;
     box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.11);
 
+    @include media-mobile-sm {
+        padding: 20px 0;
+    }
+
     &__text {
         font-weight: 600;
         color: $text-color;
+
+        @include media-mobile-sm {
+            font-size: 12px;
+            font-weight: 500;
+
+        }
     }
 }

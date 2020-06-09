@@ -47,12 +47,13 @@
             <div class="container promo__container">
                 <div class="promo__text animate__animated animate__zoomInLeft">
                     <div class="promo__title">
-                        Привет, я андрей HTML
+                        Привет, я андрей<br />
+                        HTML
                         <span class="promo__title-orange">верстальщик</span>
                     </div>
                     <div class="promo__subtitle">
-                        Занимаюсь версткой сайтов по готовым макетам, с посадкой
-                        на CMS <span>Wordpress</span>
+                        Занимаюсь версткой сайтов по готовым<br />
+                        макетам, с посадкой на CMS <span>Wordpress</span>
                     </div>
                 </div>
                 <div class="promo__img animate__animated animate__zoomIn">
@@ -98,7 +99,10 @@
                                 <span class="about__social-item-title">
                                     E-mail:
                                 </span>
-                                <a href="#" class="about__social-item-link">
+                                <a
+                                    href="mailto:shulhan.andrei@gmail.com"
+                                    class="about__social-item-link"
+                                >
                                     shulhan.andrei@gmail.com
                                 </a>
                             </div>
@@ -114,10 +118,13 @@
 
                             <div class="about__social-item">
                                 <span class="about__social-item-title">
-                                    Телефон:
+                                    Телеграм
                                 </span>
-                                <a href="#" class="about__social-item-link">
-                                    +375-25-736-57-40
+                                <a
+                                    href="tg://resolve?domain=shulhan"
+                                    class="about__social-item-link"
+                                >
+                                    @shulhan
                                 </a>
                             </div>
                         </div>
@@ -261,50 +268,106 @@
             </div>
         </section>
         <!--  ===== ./section PORTFOLIO =====  -->
-        <!-- 
-    <section class="contacts">
-        <div class="container contacts__container">
-            <h2 class="title">Контакты</h2>
-            <div class="contacts__wrapper">
-                <div class="contacts__block-link wow animate__animated animate__fadeInLeft">
-                    <a href="#" class="social-link social-link_mail">
-                        <span class="social-link__title">E-mail</span>
-                        <span class="social-link__url">shulhan@gmail.com</span>
-                    </a>
 
-                    <a href="#" class="social-link social-link_tel">
-                        <span class="social-link__title">Telegram</span>
-                        <span class="social-link__url">@shulhan</span>
-                    </a>
+        <section class="contacts">
+            <div class="container contacts__container">
+                <h2 class="title">Контакты</h2>
+                <div class="contacts__wrapper">
+                    <div
+                        class="contacts__block-link wow animate__animated animate__fadeInLeft"
+                    >
+                        <a
+                            href="mailto:shulhan.andre@gmail.com"
+                            class="social-link social-link_mail"
+                        >
+                            <span class="social-link__title">E-mail</span>
+                            <span class="social-link__url"
+                                >shulhan.andrei@gmail.com</span
+                            >
+                        </a>
 
-                    <a href="#" class="social-link social-link_vk">
-                        <span class="social-link__title">VK</span>
-                        <span class="social-link__url">id6763453645</span>
-                    </a>
+                        <a
+                            href="tg://resolve?domain=shulhan"
+                            class="social-link social-link_tel"
+                        >
+                            <span class="social-link__title">Telegram</span>
+                            <span class="social-link__url">@shulhan</span>
+                        </a>
+
+                        <a href="#" class="social-link social-link_vk">
+                            <span class="social-link__title">VK</span>
+                            <span class="social-link__url">id6763453645</span>
+                        </a>
+                    </div>
+                    <form
+                        name="form"
+                        id="form"
+                        class="form wow animate__animated animate__fadeInUp"
+                        enctype="multipart/form-data"
+                        method="POST"
+                    >
+                        <h3 class="form__title">
+                            Написать мне
+                        </h3>
+                        <p class="form__item">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="ФИО"
+                                required
+                                minlength="2"
+                            />
+                        </p>
+                        <p class="form__item">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="E-MAIL"
+                                required
+                            />
+                        </p>
+                        <p class="form__item">
+                            <textarea
+                                name="text"
+                                placeholder="Сообщение"
+                                required
+                            ></textarea>
+                        </p>
+
+                        <div class="form__send-file">
+                            <input
+                                type="file"
+                                name="myfile[]"
+                                multiple
+                                id="myfile"
+                            />
+                        </div>
+
+                        <button type="submit" class="button button_form">
+                            Отправить
+                        </button>
+                        <!--     <div class="form__modal">
+                            <p>
+                                Спасибо, <span class="form__modal-name"></span>
+                            </p>
+                            <span class="form__modal-close">&times;</span>
+                        </div> -->
+                    </form>
                 </div>
-                <form class="form wow animate__animated animate__fadeInUp">
-                    <h3 class="form__title">
-                        Написать мне
-                    </h3>
-                    <input type="text" name="user" placeholder="ФИО*" />
-                    <input type="mail" name="mail" placeholder="*E-MAIL" />
-                    <textarea name="message" placeholder="Сообщение" cols="30" rows="10"></textarea>
-                    <button class="button button_form">Отправить</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p class="footer__text">
-                © 2019 Shulhan Andrei. Все права защищены.
-            </p>
-        </div>
-    </footer> -->
+        <footer class="footer">
+            <div class="container">
+                <p class="footer__text">
+                    © 2020 Shulhan Andrei. Все права защищены.
+                </p>
+            </div>
+        </footer>
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/slick.min.js"></script>
         <script src="js/wow.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
         <script src="js/script.min.js"></script>
     </body>
 </html>

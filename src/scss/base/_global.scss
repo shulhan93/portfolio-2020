@@ -2,6 +2,10 @@ body {
     background-color: $bg-color;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
+
+    &.lock {
+        overflow: hidden;
+    }
 }
 
 ul {
@@ -25,5 +29,4 @@ a {
 
 .about__block-text.animate__fadeIn {
     --animate-duration: 1s;
-
 }

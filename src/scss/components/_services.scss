@@ -1,9 +1,14 @@
 .services {
     padding: 80px 0;
+
+    @include media-tablet {
+        padding: 50px 0;
+    }
+
+    @include media-mobile-sm {
+        padding: 20px 0;
+    }
 }
-
-.container {}
-
 
 .services__wrapper {
     margin-top: 100px;
@@ -50,7 +55,7 @@
     font-size: 23px;
 
     @include media-mobile-sm {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
@@ -65,6 +70,7 @@
     @include media-mobile-sm {
         margin-top: 10px;
         font-size: 16px;
+        line-height: 20px;
     }
 }
 

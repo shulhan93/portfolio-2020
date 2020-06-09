@@ -3,5 +3,8 @@
     margin: auto;
     padding: 0 15px;
 
+    @include media-mobile-sm {
+        padding: 0 10px;
+    }
 
 }

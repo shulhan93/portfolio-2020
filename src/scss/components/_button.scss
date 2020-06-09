@@ -1,5 +1,5 @@
 .button {
-    width: 190px;
+    max-width: 190px;
     padding: 15px 40px;
     color: $text-color;
     font-weight: 600;
@@ -8,6 +8,22 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    outline: none;
+
+    &:hover {
+        box-shadow: 3px 3px 15px $current-color;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    @include media-mobile-sm {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 
     &_form {
         margin-left: auto;

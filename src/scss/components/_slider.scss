@@ -6,8 +6,8 @@
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
     padding-bottom: 10px;
 
-
-    @include media-mobile-sm {}
+    @include media-mobile-sm {
+    }
 
     &__item {
         display: flex;
@@ -22,7 +22,6 @@
         @include media-mobile {
             padding-right: 60px;
         }
-
 
         @include media-mobile-sm {
             padding: 10px;
@@ -55,8 +54,6 @@
             padding-left: 20px;
             opacity: 0;
             border-radius: 7px;
-
-
             @include media-mobile-sm {
                 font-size: 12px;
             }
@@ -81,7 +78,7 @@
             }
 
             @include media-mobile-sm {
-                box-shadow: 2px 3px 6px rgba(0, 0, 0, .54);
+                box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.54);
             }
         }
     }
@@ -117,7 +114,6 @@
         @include media-tablet {
             font-size: 20px;
         }
-
 
         @include media-mobile {
             font-size: 15px;
@@ -169,7 +165,7 @@
 /* Стрелка влево */
 .slider .slick-arrow.slick-prev {
     left: 30px;
-    background: url("../img/arrow-p.svg") no-repeat center center /contain;
+    background: url("../img/arrow-p.svg") no-repeat center center / contain;
 
     @include media-mobile {
         left: 7px;
@@ -183,7 +179,7 @@
 /* Стрелка вправо */
 .slider .slick-arrow.slick-next {
     right: 30px;
-    background: url("../img/arrow-n.svg") no-repeat center center /contain;
+    background: url("../img/arrow-n.svg") no-repeat center center / contain;
 
     @include media-mobile {
         right: 7px;

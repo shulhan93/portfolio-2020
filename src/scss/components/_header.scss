@@ -5,15 +5,17 @@
     left: 0;
     transition: all 0.4s;
     background-color: $bg-color;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     height: 80px;
     z-index: 100;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 
     @include media-tablet {
-        height: 50px;
+        height: 60px;
     }
 
-
+    @include media-mobile-sm {
+        height: 50px;
+    }
 
     &__container {
         height: 100%;
@@ -28,6 +30,6 @@
 
     &.sticky {
         padding: 0;
-        height: 55px;
+        height: 45px;
     }
 }

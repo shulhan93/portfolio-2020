@@ -20,45 +20,110 @@ window.addEventListener('scroll', function () {
     header.classList.toggle('sticky', window.scrollY > 0)
 })
 
+
+
+
+
 $(document).ready(function () {
+    $('#form').validate({
+        rules: {
+            name: {
+                required: true,
+            }
+        },
+        messages: {
+            name: {
+                required: "Поле 'ФИО' обязательно к заполнению",
+                minlength: "Введите не менее 2-х символов в поле 'Имя'"
+            },
+            email: {
+                required: "Поле 'Email' обязательно к заполнению",
+                email: "Необходим формат адреса email"
+            },
+            text: "Поле 'Сообщение' обязательно к заполнению"
+        }
+    })
+
+
+
+
+
+
+
+
+    const form = document.getElementById('form')
+    form.addEventListener('submit', function (event) {
+        console.log("Отправка запроса");
+        event.preventDefault ? event.preventDefault() : event.returnValue = false;
+        var req = new XMLHttpRequest();
+        req.open('POST', 'send.php', true);
+        req.onload = function () {
+            if (req.status >= 200 && req.status < 400) {
+                const json = JSON.parse(this.response); // Ебанный internet explorer 11
+                console.log(json);
+
+                // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+                if (json.result == "success") {
+                    setTimeout(showSucces, 1000)
+                    // alert("Сообщение отправлено");
+                    form.reset()
+
+                } else {
+                    // Если произошла ошибка
+                    alert("Ошибка. Сообщение не отправлено");
+                }
+                // Если не удалось связаться с php файлом
+            } else {
+                // alert("Ошибка сервера. Номер: " + req.status);
+
+            }
+        };
+
+        // Если не удалось отправить запрос. Стоит блок на хостинге
+        req.onerror = function () {
+            alert("Ошибка отправки запроса");
+        };
+        req.send(new FormData(event.target));
+    })
+
+    /*     function showSucces() {
+            const modal = document.querySelector('.form__modal')
+            const close = document.querySelector('.form__modal-close')
+            modal.classList.add('active')
+
+            close.addEventListener('click', function () {
+                modal.classList.remove('active')
+            })
+        } */
+
+    function showSucces() {
+        const succes = document.createElement('p')
+        succes.classList.add('form__success')
+        succes.textContent = 'Сообщение отправлено'
+        form.appendChild(succes)
+        setTimeout(function () {
+            succes.remove()
+        }, 1000)
+
+    }
+
+
     $('.main-nav__burger').click(function (e) {
         $('.main-nav, .main-nav__burger').toggleClass('active')
+        $('body').toggleClass('lock')
     })
+
     $('.slider').slick({
         responsive: [{
-                breakpoint: 576,
-                settings: {
-                    dots: true,
-                }
+            breakpoint: 576,
+            settings: {
+                dots: true,
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ]
+        }]
     });
-    /*     const arrowP = document.querySelector('.slick-arrow.slick-prev')
-        const arrowN = document.querySelector('.slick-next')
-        const lengthSlider = document.querySelectorAll('.slick-cloned').length - 1
-        const allCount = document.querySelector('.slider__count-all')
-        const currentSlider = document.querySelector('.slider__count-current')
-        allCount.textContent = lengthSlider
-        currentSlider.textContent = 1
-        console.log(arrowN)
-        arrowN.addEventListener('click', () => {
-            if (+currentSlider.textContent >= lengthSlider) {
-                return
-            }
-            currentSlider.textContent = +currentSlider.textContent + 1
-        })
 
-        arrowP.addEventListener('click', () => {
-            if (+currentSlider.textContent == 1) {
-                return
-            }
-            currentSlider.textContent = +currentSlider.textContent - 1
-        }); */
     new WOW({
-        offset: 20
+        offset: 10
     }).init();
 
 
