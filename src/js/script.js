@@ -13,19 +13,36 @@ testWebP(function (support) {
     }
 });
 
-
-// sticky header
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('header')
-    header.classList.toggle('sticky', window.scrollY > 0)
-})
-
-
-
-
+let error = 0;
 
 $(document).ready(function () {
-    $('#form').validate({
+
+    // sticky header
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header')
+        header.classList.toggle('sticky', window.scrollY > 0)
+    })
+
+    // count file
+    let fields = document.querySelectorAll('.field__file');
+    Array.prototype.forEach.call(fields, function (input) {
+        let label = input.nextElementSibling,
+            labelVal = label.querySelector('.field__file-fake').innerText;
+
+        input.addEventListener('change', function (e) {
+            let countFiles = '';
+            if (this.files && this.files.length >= 1)
+                countFiles = this.files.length;
+
+            if (countFiles)
+                label.querySelector('.field__file-fake').innerText = 'Выбрано файлов: ' + countFiles;
+            else
+                label.querySelector('.field__file-fake').innerText = labelVal;
+        });
+    });
+
+    // validator 
+    const a = $('#form').validate({
         rules: {
             name: {
                 required: true,
@@ -45,16 +62,16 @@ $(document).ready(function () {
     })
 
 
-
-
-
-
-
-
+    // send form 
     const form = document.getElementById('form')
     form.addEventListener('submit', function (event) {
+
+        if (!a.valid()) {
+            return false
+        }
         console.log("Отправка запроса");
         event.preventDefault ? event.preventDefault() : event.returnValue = false;
+
         var req = new XMLHttpRequest();
         req.open('POST', 'send.php', true);
         req.onload = function () {
@@ -64,18 +81,18 @@ $(document).ready(function () {
 
                 // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
                 if (json.result == "success") {
-                    setTimeout(showSucces, 1000)
+                    showSucces()
                     // alert("Сообщение отправлено");
+                    document.querySelector('.field__file-fake').textContent = 'Файл не выбран'
                     form.reset()
-
                 } else {
                     // Если произошла ошибка
                     alert("Ошибка. Сообщение не отправлено");
                 }
                 // Если не удалось связаться с php файлом
             } else {
-                // alert("Ошибка сервера. Номер: " + req.status);
 
+                // alert("Ошибка сервера. Номер: " + req.status);
             }
         };
 
@@ -86,33 +103,27 @@ $(document).ready(function () {
         req.send(new FormData(event.target));
     })
 
-    /*     function showSucces() {
-            const modal = document.querySelector('.form__modal')
-            const close = document.querySelector('.form__modal-close')
-            modal.classList.add('active')
 
-            close.addEventListener('click', function () {
-                modal.classList.remove('active')
-            })
-        } */
-
+    // show modal form
     function showSucces() {
-        const succes = document.createElement('p')
-        succes.classList.add('form__success')
-        succes.textContent = 'Сообщение отправлено'
-        form.appendChild(succes)
-        setTimeout(function () {
-            succes.remove()
-        }, 1000)
+        const inputName = document.querySelector('input[name="name"]')
+        const modal = document.querySelector('.form__overlay')
+        const close = document.querySelector('.form__modal-close')
+        modal.querySelector('.form__modal-name').textContent = inputName.value
+        modal.classList.add('active')
+        close.addEventListener('click', function () {
+            modal.classList.remove('active')
+        })
 
     }
 
-
+    // burger
     $('.main-nav__burger').click(function (e) {
         $('.main-nav, .main-nav__burger').toggleClass('active')
         $('body').toggleClass('lock')
     })
 
+    // slider
     $('.slider').slick({
         responsive: [{
             breakpoint: 576,
@@ -122,9 +133,8 @@ $(document).ready(function () {
         }]
     });
 
+    // WOW plugin
     new WOW({
-        offset: 10
+        /*    offset: 10 */
     }).init();
-
-
 });

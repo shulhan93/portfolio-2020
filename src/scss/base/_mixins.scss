@@ -35,7 +35,7 @@
     transform: translateX(-50%);
 }
 
-@mixin сenter-y() {
+@mixin center-y() {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
