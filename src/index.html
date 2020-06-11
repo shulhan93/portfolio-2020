@@ -8,7 +8,7 @@
     <title>shulhan</title>
 </head>
 
-<body>
+<body id="body">
     <!--  ===== section HEADER =====  -->
     <header class="header">
         <div class="container header__container">
@@ -22,19 +22,19 @@
                 <nav class="main-nav header__main-nav">
                     <ul class="main-nav__list">
                         <li class="main-nav__item">
-                            <a href="#" class="main-nav__link">Главная</a>
+                            <a href="#body" class="main-nav__link">Главная</a>
                         </li>
                         <li class="main-nav__item">
-                            <a href="#" class="main-nav__link">Обо мне</a>
+                            <a href="#about" class="main-nav__link">Обо мне</a>
                         </li>
                         <li class="main-nav__item">
-                            <a href="#" class="main-nav__link">Услуги</a>
+                            <a href="#services" class="main-nav__link">Услуги</a>
                         </li>
                         <li class="main-nav__item">
-                            <a href="#" class="main-nav__link">Портфолио</a>
+                            <a href="#portfolio" class="main-nav__link">Портфолио</a>
                         </li>
                         <li class="main-nav__item">
-                            <a href="#" class="main-nav__link">Контакты</a>
+                            <a href="#contacts" class="main-nav__link">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -64,7 +64,7 @@
     </section>
     <!--  ===== ./section PROMO =====  -->
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container about__container">
             <h2 class="title">
                 Обо мне
@@ -78,7 +78,7 @@
                     <span class="about__name">Я Шульган Андрей</span>
                     <p class="about__description">
                         Приветствую на своем сайте портфолио. Сверстаю для
-                        Вас отличный сайт, с любовью. Знаю все технологии,
+                        Вас отличный сайт. Знаю все технологии,
                         которые нужны для создания сайтов, а те которые не
                         нужны, не знаю.
                     </p>
@@ -156,7 +156,7 @@
     </section>
 
     <!--  ===== section SERVICES =====  -->
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
             <h2 class="title">Услуги</h2>
             <div class="services__wrapper">
@@ -200,7 +200,7 @@
     <!--  ===== ./section SERVICES =====  -->
 
     <!--  ===== ./section PORTFOLIO =====  -->
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <h2 class="title">Портфолио</h2>
             <div class="portfolio__slider wow animate__animated animate__fadeIn">
@@ -228,7 +228,7 @@
     </section>
     <!--  ===== ./section PORTFOLIO =====  -->
 
-    <section class="contacts">
+    <section class="contacts" id="contacts">
         <div class="container contacts__container">
             <h2 class="title">Контакты</h2>
             <div class="contacts__wrapper">
@@ -286,7 +286,12 @@
                         </div>
                     </div>
 
-
+                    <div class="loaded preloader">
+                        <div class="preloader__row">
+                            <div class="preloader__item"></div>
+                            <div class="preloader__item"></div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

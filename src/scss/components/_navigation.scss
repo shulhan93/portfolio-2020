@@ -54,6 +54,10 @@
         transition: color 0.3s ease;
         display: block;
 
+        &.active {
+            color: $current-color;
+        }
+
         &:hover {
             color: $current-color;
         }

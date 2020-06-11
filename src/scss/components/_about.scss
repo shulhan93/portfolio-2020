@@ -14,11 +14,9 @@
         @include media-mobile-sm {
             display: block;
         }
-
     }
 
     &__photo {
-
         position: relative;
         z-index: 10;
 
@@ -64,11 +62,6 @@
     &__block-text {
         max-width: 720px;
         margin-left: 30px;
-
-        /*    @include media-desktop {
-            max-width: 651px;
-        } */
-
 
         @include media-mobile-sm {
             margin-left: 0;
@@ -119,21 +112,19 @@
     }
 
     &__social-item {
-        min-width: 160px;
         font-size: 16px;
-        width: 50%;
         margin-bottom: 20px;
-
-        &:nth-child(odd) {
-            @include media-tablet {
-                margin-right: 30px;
-            }
-        }
+        margin-right: 10%;
 
         @include media-tablet {
-            margin-bottom: 10px;
-            width: auto;
+            margin-right: 5%;
         }
+
+        @include media-mobile {
+            margin-right: 0;
+            width: 100%;
+        }
+
     }
 
     &__social-item-title {
@@ -161,9 +152,5 @@
             font-size: 14px;
 
         }
-
-
     }
-
-
 }
